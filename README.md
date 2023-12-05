@@ -2,7 +2,7 @@
 
 ##### ***PROJETO EM ANDAMENTO
 
-
+## O PROJETO
 
 Neste projeto, irei construir uma infraestrutura de dados em nuvem, para hospedar processos de coleta, armazenamento, tratamento de dados do mercado financeiro brasileiro.
 
@@ -25,7 +25,11 @@ Sobre os dados desse projeto, tenho pensado a princípio pensando em:
     - Moedas
 
 Neste projeto, coletaremos esses dados via APIs e Bibliotecas.
-Portanto, neste inicio de projeto, vou focar na exploração dessas APIs e bibliotecas, a fim de já deixar organizado algumas estruturas que vou querer incluir neste projeto.
+
+### ETAPAS
+
+Neste inicio de projeto, vou focar na exploração dessas APIs e bibliotecas, a fim de já deixar organizado algumas estruturas que vou querer incluir neste projeto.
+Como estou estudando AWS, irei deixar organizado apenas alguns desses dados citados, para partir para etapas de ingestão, e pipelines (foco do proejto).
 
 
 

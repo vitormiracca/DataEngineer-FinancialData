@@ -1,37 +1,13 @@
 from datetime import date
 import pandas as pd
-import investpy as inv
+from modulos import objetos_investing as f
 import yfinance as yf
 
 country = 'brazil'
 
-
-def br_stocks() -> pd.DataFrame:
-    """
-    Retorna um Dataframe com todas os valores mobiliarios do Brasil, listados no investing.com
-    Seguintes colunas:
-    ==================================================
-    country	name | full_name | isin | currency | symbol
-    ==================================================
-
-    Os dados estão desatualizados. A função get_stocks não busca os ativos atualizados
-    """
-    br_stocks = inv.get_stocks_dict(country=country)
-    br_stocks = pd.DataFrame(br_stocks)
-    return br_stocks
-
-def br_tickers() -> dict : 
-    """
-    Retorna a lista de ativos presentes em br_stocks (dict{ticker_real, ticker_yf})
-    Investing.com
-    """
-    symbols = br_stocks()['symbol'].to_list()
-    tickers = {symbol : symbol + '.SA' for symbol in symbols}
-    return tickers
-
-
 def get_historical_prices_stocks_loop(tickers:list, interval:str, start:date, end=date.today(), period='1d'):
     """
+    *** MENOS PERFORMÁTICA QUE get_historical_prices_stocks
     Retorna DF com cotações históricas para os ativos declarados em 'tickers'.
     Exemplos de intervalos entre as cotações:
         - 1m, 5m, 15m, 30m, 60m, 1h, 1d, 5d, 1wk, 1mo, 3mo
@@ -54,9 +30,7 @@ def get_historical_prices_stocks_loop(tickers:list, interval:str, start:date, en
     return result_df
 
 def get_historical_prices_stocks(tickers:list, interval:str, start:date, end=date.today(), period='1d'):
-    """
-    ** Avaliar testes entre funções (x get_historical_prices_stocks_loop)
-    
+    """  
     Retorna DF com cotações históricas para os ativos declarados em 'tickers'.
     Exemplos de intervalos entre as cotações:
         - 1m, 5m, 15m, 30m, 60m, 1h, 1d, 5d, 1wk, 1mo, 3mo
