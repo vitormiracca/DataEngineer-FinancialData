@@ -1,6 +1,5 @@
 from datetime import date
 import pandas as pd
-from modulos import objetos_investing as f
 import yfinance as yf
 
 country = 'brazil'
