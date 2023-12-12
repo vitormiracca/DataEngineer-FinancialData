@@ -3,9 +3,9 @@ import investpy as inv
 
 country = 'brazil'
 
-def br_stocks():
+def br_stocks() -> dict:
     """
-    Retorna um Dataframe com todas os valores mobiliarios do Brasil, listados no investing.com
+    Retorna um Dicionario com todas os valores mobiliarios do Brasil, listados no investing.com
     Seguintes colunas:
     ==================================================
     country	name | full_name | isin | currency | symbol

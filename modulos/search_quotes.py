@@ -41,7 +41,7 @@ def get_historical_prices_stocks(tickers:list, interval:str, start:date, end=dat
 
     TickersYF = yf.Tickers(tickers)
 
-    df_history = TickersYF.download(interval='1wk', start='2020-01-01', end=date.today(), period='1d')
+    df_history = TickersYF.download(interval=interval, start=start, end=date.today(), period=period)
     df_history = df_history.stack(level=1).rename_axis(['Date', 'Ativo']).reset_index(level=1)
 
     df_history = df_history[['Ativo', 'Open', 'Close', 'High', 'Low', 'Volume']]
