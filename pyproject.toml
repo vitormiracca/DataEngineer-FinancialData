@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "dataengineer-financialdata"
+version = "0.1.0"
+description = "projeto de orquestracao de ambiente de dados do mercado financeiro"
+authors = ["Vitor Miracca <vitormiracca@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+pandas = "^2.1.4"
+investpy = "^1.0.8"
+yfinance = "^0.2.33"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
