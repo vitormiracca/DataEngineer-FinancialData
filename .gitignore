@@ -1,1 +1,3 @@
 teste.ipynb
+**/*.sqlite
+**/__pycache__
